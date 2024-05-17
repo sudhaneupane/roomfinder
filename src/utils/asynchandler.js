@@ -1,11 +1,12 @@
-const asyncHandler = async () => {
+const asyncHandler=(handle)=>async(req,res,next)=>{
   try {
-    await handle(req, res, next);
+      await handle(req,res,next)
   } catch (error) {
-    console.log(error);
-    res.status(500).json({
-      msg: error.message,
-    });
+      res.status(error.code || 500).json({
+          msg:error.message,
+          success:false
+      })
   }
-};
-export { asyncHandler };
+}
+
+export {asyncHandler}
