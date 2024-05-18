@@ -26,8 +26,9 @@ const bookingSchema = new mongoose.Schema({
     status:{
         type:String,
         enum:['confirmed','pending','booked']
-    }
-
+    },
+},{
+    timestamps:true,
 })
 
 export const Booking = mongoose.model("Booking",bookingSchema)
