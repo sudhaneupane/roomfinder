@@ -26,5 +26,9 @@ const addRoom = asyncHandler(async(req,res)=>{
     res.status(200).json({message:"Success"})
 
 })
+const getRoom = async(req,res)=>{
+    const roomDetails = await Room.find({});
+    res.staus(200).json(roomDetails)
+}
 
-export {addRoom}
+export {addRoom,getRoom}
