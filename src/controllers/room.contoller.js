@@ -24,7 +24,6 @@ const addRoom = asyncHandler(async(req,res)=>{
         res.status(500).json({message:"Something went wrong while registering room"})
     }
     res.status(200).json({message:"Success"})
-
 })
 const getRoom = async(req,res)=>{
     const roomDetails = await Room.find({});
